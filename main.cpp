@@ -29,8 +29,8 @@ double solve(char op, double a, double b) {
             return a * b;
         case '/': {
             if (abs(b) < 0.000001) {
-                std::cout << "ZERO DIVISION" << std::endl;
-                return 10e10;
+                std::cout << "Error: zero division!" << std::endl;
+                return 0;
             }
             return a / b;
         }
@@ -68,7 +68,7 @@ int main() {
             case 1: {
                 if (root) deleteTree(root);
                 system("cls");
-                printf("Input expression f(x, y): ");
+                std::cout << "Input expression f(x, y): ";
                 char *string = new char[100];
                 std::cin.ignore();
                 gets(string);
